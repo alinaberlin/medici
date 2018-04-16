@@ -1,0 +1,12 @@
+Feature: Login 
+  Scenario Outline: login 
+    Given open the site with the login page
+    When go to login page
+    And introduce <username> and <password>
+    Then I'm login succesfull
+    
+    Examples: 
+      | username                | password      |
+      | alina.ghetler@gmail.com | berlinberlin1 |
+      | alina.ghetler@gmail.com | berlinberlin1 |
+

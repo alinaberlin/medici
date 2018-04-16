@@ -1,0 +1,14 @@
+Given(/^open the site with the login page$/) do
+  visit "https://myalinarails.herokuapp.com/"
+end
+When(/^go to login page$/) do
+  find("a[href='/login']").click
+end
+When(/^introduce (.*) and (.*)$/) do |username, password|
+  fill_in('user[email]', with: username)
+  fill_in('user[password]', with: password)
+  click_button('Log in')
+end
+Then(/^I'm login succesfull/) do
+  have_content('Product was successfully created')  
+end
